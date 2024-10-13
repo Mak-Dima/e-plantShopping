@@ -32,10 +32,10 @@ const CartItem = ({ onContinueShopping }) => {
 
   const handleDecrement = (item) => {
     var newItem = {...item}
-    if (newItem.quantitiy < 0) {
+    newItem.quantitiy = item.quantitiy - 1
+    if (newItem.quantitiy <= 0) {
       newItem.quantitiy = 0
     }
-    newItem.quantitiy = item.quantitiy - 1
     dispatch(updateQuantity(newItem))
   };
 
